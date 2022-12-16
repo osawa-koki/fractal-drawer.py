@@ -6,8 +6,8 @@ from numba import jit
 @jit
 def burning_calc(imag, Nx, Ny, xmin, xmax, ymin, ymax, max_iteration):
 
-    x=np.linspace(xmin,xmax,Nx)
-    y=np.linspace(ymin,ymax,Ny)
+    x=np.linspace(xmin, xmax, Nx)
+    y=np.linspace(ymin, ymax, Ny)
 
     for i in range(Nx):
         for j in range(Ny):
@@ -22,13 +22,13 @@ def burning_calc(imag, Nx, Ny, xmin, xmax, ymin, ymax, max_iteration):
 Nx=2000
 Ny=2000
 max_iteration=1000
-imag=np.zeros((Nx,Ny))
+imag=np.zeros((Nx, Ny))
 xmax=-1.7
 xmin=-1.8
 ymax=0.02
 ymin=-0.1
-burning_calc(imag, Nx, Ny, xmin, xmax, ymin, ymax,max_iteration)
-plt.figure(figsize=(15,15))
-plt.imshow(imag,extent=(xmin,xmax,ymin,ymax),cmap=plt.cm.afmhot)
+burning_calc(imag, Nx, Ny, xmin, xmax, ymin, ymax, max_iteration)
+plt.figure(figsize=(15, 15))
+plt.imshow(imag, extent=(xmin, xmax, ymin, ymax), cmap=plt.cm.afmhot)
 # plt.colorbar()
 plt.show()
